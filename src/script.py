@@ -94,14 +94,14 @@ def predict_outcomes(df):
 
     # Iterate over columns/variables in the dataset
     for column in df.columns:
-    # Replace 'NA' with NaN
-    df[column] = df[column].replace('NA', np.nan)
+        # Replace 'NA' with NaN
+        df[column] = df[column].replace('NA', np.nan)
 
-    # Convert strings containing only numbers to numeric values
-    df[column] = pd.to_numeric(df[column], errors='coerce')
+        # Convert strings containing only numbers to numeric values
+        df[column] = pd.to_numeric(df[column], errors='coerce')
 
-    # Convert NaN values back to strings
-    df[column] = df[column].astype(object).where(df[column].notna(), np.nan)
+        # Convert NaN values back to strings
+        df[column] = df[column].astype(object).where(df[column].notna(), np.nan)
     
     # Load your trained model from the models directory
     model_path = os.path.join(os.path.dirname(__file__), "..", "models", "model.joblib")
