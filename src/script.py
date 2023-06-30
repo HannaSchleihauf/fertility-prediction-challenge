@@ -55,7 +55,33 @@ def predict_outcomes(df):
     # they did.
 
     # Keep 
-    keepcols = ['burgstat2019', 'leeftijd2019', 'woonvorm2019', 'oplmet2019', 'aantalki2019']
+    keepcols = [col for col in column_names if col.startswith(('nomem_encr','leeftijd', 
+                                                 'geslacht',
+                                                 'positie',
+                                                 'aantalhh',
+                                                 'aantalki',
+                                                 'partner',
+                                                 'burgstat',
+                                                 'woonvorm',
+                                                 'woning',
+                                                 'sted',
+                                                 'belbezig', 
+                                                 'brutoink',
+                                                 'brutoink_f', 
+                                                 'netinc',
+                                                 'netinc',
+                                                 'brutohh_f',
+                                                 'nettohh_f',
+                                                 'oplzon',
+                                                 'oplmet',
+                                                 'doetmee',
+                                                 'herkomstgroep',
+                                                 'simpc',
+                                                 'cr',
+                                                 'cs',
+                                                 'ch',
+                                                 'cf',
+                                                 'cw'))]
     nomem_encr = df["nomem_encr"]
     
     df = df.loc[:, keepcols]
