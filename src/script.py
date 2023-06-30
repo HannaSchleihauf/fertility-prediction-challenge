@@ -55,6 +55,7 @@ def predict_outcomes(df):
     # they did.
 
     # Keep 
+    column_names = df.columns
     keepcols = [col for col in column_names if col.startswith(('nomem_encr','leeftijd', 
                                                  'geslacht',
                                                  'positie',
