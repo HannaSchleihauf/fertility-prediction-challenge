@@ -22,6 +22,7 @@ python script.py data/test_data_liss_2_subjects.csv
 import os
 import sys
 import argparse
+import numpy as np
 import pandas as pd
 from joblib import load
 
